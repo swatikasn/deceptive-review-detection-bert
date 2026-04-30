@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lie Detection from Text</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="intro">
+        <div>
+          <p class="kicker">NLP Review Authenticity Classifier</p>
+          <h1>Lie Detection from Text</h1>
+        </div>
+        <div class="brief">
+          <p>
+            Paste a review, message, or short comment. The classifier estimates
+            whether the writing pattern looks more authentic or computer-generated.
+          </p>
+          <span id="modelStatus">Loading model status...</span>
+        </div>
+      </section>
+
+      <section class="workspace" aria-label="Prediction workspace">
+        <div class="input-panel">
+          <div class="panel-head">
+            <div>
+              <h2>Evidence Text</h2>
+              <p>Reviews work best when they are at least two sentences long.</p>
+            </div>
+            <div class="button-row">
+              <button id="clearButton" class="ghost" type="button">Clear</button>
+              <button id="sampleButton" class="ghost" type="button">Try sample</button>
+            </div>
+          </div>
+          <textarea
+            id="reviewText"
+            spellcheck="true"
+            placeholder="Paste a review here..."
+          ></textarea>
+          <div class="actions">
+            <span id="charCount">0 characters</span>
+            <button id="predictButton" type="button">Analyze</button>
+          </div>
+        </div>
+
+        <aside class="result-panel" aria-live="polite">
+          <div class="score-block">
+            <div class="score-head">
+              <span class="score-label">Computer-generated likelihood</span>
+              <span id="confidenceValue">-- confidence</span>
+            </div>
+            <strong id="scoreValue">--</strong>
+            <div class="meter" aria-hidden="true">
+              <span id="meterFill"></span>
+            </div>
+          </div>
+
+          <div id="predictionBadge" class="badge neutral">Waiting for text</div>
+          <p id="disclaimer" class="disclaimer">
+            Results are probabilistic and should be treated as decision support, not absolute lie detection.
+          </p>
+
+          <div class="indicators">
+            <h2>Key Indicators</h2>
+            <dl id="indicatorList">
+              <div><dt>Word count</dt><dd>--</dd></div>
+              <div><dt>Sentence variation</dt><dd>--</dd></div>
+              <div><dt>Repetition</dt><dd>--</dd></div>
+              <div><dt>First person</dt><dd>--</dd></div>
+            </dl>
+          </div>
+        </aside>
+      </section>
+
+      <section class="notes" aria-label="Project notes">
+        <div>
+          <strong>Features</strong>
+          <span>TF-style lexical evidence, stylometry, sentiment intensity, repetition, and first-person cues.</span>
+        </div>
+        <div>
+          <strong>Output</strong>
+          <span>Prediction, computer-generated likelihood, confidence, and interpretable indicators.</span>
+        </div>
+        <div>
+          <strong>Scope</strong>
+          <span>Decision support for fake-review detection, not absolute truth verification.</span>
+        </div>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

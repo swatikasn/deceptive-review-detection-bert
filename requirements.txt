@@ -1,0 +1,17 @@
+# Lie Detection NLP Project Requirements
+# This project primarily uses the Python Standard Library.
+
+# Standard Library Modules used:
+# - csv
+# - math
+# - pickle
+# - re
+# - collections
+# - pathlib
+# - argparse
+# - json
+# - http.server
+# - urllib.parse
+
+# Optional: For production deployments, you might consider:
+# gunicorn==21.2.0  # If you migrate to a WSGI framework like Flask

@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.DS_Store
+fake reviews dataset.csv
+nlp_project_lie_detection.ipynb
+static/
