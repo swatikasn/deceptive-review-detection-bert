@@ -1,0 +1,6 @@
+[project]
+name = "lie-detection-nlp"
+version = "1.0.0"
+description = "NLP review authenticity classifier with Vercel serverless API."
+requires-python = ">=3.11"
+dependencies = []
