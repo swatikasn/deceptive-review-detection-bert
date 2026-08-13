@@ -2,6 +2,12 @@
 
 Small local web app for classifying a pasted review as more likely authentic or computer-generated.
 
+## Screenshots
+
+![Screenshot 1](screenshots/Screenshot%202026-08-14%20at%201.56.02%E2%80%AFAM.png)
+
+![Screenshot 2](screenshots/Screenshot%202026-08-14%20at%201.56.12%E2%80%AFAM.png)
+
 ## Run the Front End
 
 ```bash
