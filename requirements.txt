@@ -15,3 +15,9 @@
 
 # Optional: For production deployments, you might consider:
 # gunicorn==21.2.0  # If you migrate to a WSGI framework like Flask
+
+# Optional BERT switch support:
+# Install these with `python3 -m pip install -r requirements-bert.txt` before training:
+# - scikit-learn
+# - torch
+# - transformers

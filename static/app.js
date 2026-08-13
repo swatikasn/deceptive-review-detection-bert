@@ -2,6 +2,7 @@ const reviewText = document.querySelector("#reviewText");
 const predictButton = document.querySelector("#predictButton");
 const sampleButton = document.querySelector("#sampleButton");
 const clearButton = document.querySelector("#clearButton");
+const modelSelect = document.querySelector("#modelSelect");
 const charCount = document.querySelector("#charCount");
 const scoreValue = document.querySelector("#scoreValue");
 const confidenceValue = document.querySelector("#confidenceValue");
@@ -86,7 +87,7 @@ async function analyze() {
     const response = await fetch("/api/predict", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ text }),
+      body: JSON.stringify({ text, model_type: modelSelect.value }),
     });
     const payload = await response.json();
     if (!response.ok) throw new Error(payload.error || "Prediction failed.");
@@ -118,7 +119,12 @@ async function loadModelStatus() {
   try {
     const response = await fetch("/health");
     const payload = await response.json();
-    modelStatus.textContent = `${payload.model} · ${payload.trained_rows.toLocaleString()} training rows`;
+    const naiveBayes = payload.models.naive_bayes;
+    const bert = payload.models.bert;
+    modelSelect.querySelector('option[value="bert"]').disabled = !bert.available;
+    modelStatus.textContent = bert.available
+      ? `${naiveBayes.label} + ${bert.label} available`
+      : `${naiveBayes.label} active · BERT unavailable`;
   } catch {
     modelStatus.textContent = "Model status unavailable";
   }

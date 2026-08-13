@@ -45,7 +45,8 @@ body::before {
 }
 
 button,
-textarea {
+textarea,
+select {
   font: inherit;
 }
 
@@ -155,6 +156,29 @@ h2 {
   gap: 8px;
   flex-wrap: wrap;
   justify-content: flex-end;
+}
+
+.model-picker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0 10px;
+  color: var(--muted);
+  background: rgba(255, 253, 246, 0.75);
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.model-picker select {
+  border: 0;
+  outline: 0;
+  color: var(--ink);
+  background: transparent;
+  font-weight: 800;
 }
 
 textarea {

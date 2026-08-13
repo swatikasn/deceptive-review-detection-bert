@@ -51,6 +51,19 @@ The training script supports common column names:
 
 Restart the server after retraining so the app loads the new model.
 
+## Optional BERT Switch
+
+The app defaults to the lightweight Naive Bayes-style model in `models/deception_model.pkl`.
+It also has a BERT option in the UI/API. To enable it, export the notebook model as:
+
+```text
+bert_deception_model/
+```
+
+Place that folder in the project root and install the optional `torch` and `transformers`
+dependencies. Until the folder is present, the BERT option is shown as unavailable and
+the Naive Bayes model remains active.
+
 ## Deploy Online With Vercel
 
 This repo includes Vercel-ready files:
